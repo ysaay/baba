@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=.45, maximum-scale=.45, user-scalable=no">
+	<meta content="en-ph" http-equiv="Content-Language">
+	
+	<meta charset=utf-8>
+	<title>Animalania</title>
+
+	<link rel="stylesheet" href="css/about.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css" />
+	
+
+
+<script type="text/javascript">
+
+function changeeye(){
+	setTimeout("changeeye1('images/onedeck.png')", 750);
+	setTimeout("changeeye1('images/onedeck1.png')", 1000);
+	
+	setTimeout("changeeye2()", 750);
+}
+
+function changeeye1(val){
+document.getElementById('img').src = val;
+}
+
+function changeeye2(){
+setTimeout("changeeye()", 1000);
+}
+
+window.onload = function() {
+            var audioEl = document.getElementById("audioTag");
+         
+            audioEl.load();
+            audioEl.play();
+			audioEL.volume = 0.1;
+        };
+
+
+		
+		if(!(localStorage.getItem("soundState"))){
+localStorage.setItem("soundState", "");
+}
+
+		function loadSound(){
+if(localStorage.getItem("soundState") == "true"){
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/off.png"
+
+}else if(localStorage.getItem("soundState") == ""){
+document.getElementById('audiobg').muted =  localStorage.getItem("soundState");
+document.getElementById("test").src = "images/on.png"
+var audio = document.getElementById("audiobg");
+audio.play();
+
+}
+}
+
+function sound(){
+if(localStorage.getItem("soundState") == ""){
+mute();
+}else if(localStorage.getItem("soundState") == "true"){
+unmute();
+}
+
+}
+function mute(){
+localStorage.setItem("soundState", "true");
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/off.png"
+}
+function unmute(){
+localStorage.setItem("soundState", "");
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/on.png"
+var audio = document.getElementById("audiobg");
+audio.play();
+}
+
+		
+		
+		
+		
+		
+</script>
+	<style type="text/css">
+	.auto-style2 {
+		text-align: right;
+	}
+	.auto-style3 {
+	text-align: center;
+}
+	.auto-style4 {
+	text-align: right;
+	margin-left: 74px;
+}
+	body{
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	height: 500px
+	}
+	</style>
+	</head>
+<body onload = "changeeye(); loadSound();" background="images/about (2).png">
+	
+		<div class="auto-style3">
+			
+		
+
+
+
+			<a href="index.html" data-role="button" > 
+		<img src="images/menu.png" alt="back"/></a><br><br><span lang="en-ph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+		<p class="auto-style2">&nbsp;</p>
+		
+		
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=.45, maximum-scale=.45, user-scalable=no">
+	<meta charset=utf-8>
+	<title>GameVal</title>
+
+	
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css" />
+	
+
+<link rel="stylesheet" href="css/matchgameI.css" />
+<script type="text/javascript">
+
+
+window.onload = function() {
+            var audioEl = document.getElementById("audioTag");
+         
+            audioEl.load();
+            audioEl.play();
+			audioEL.volume = 0.1;
+        };
+
+
+		
+		if(!(localStorage.getItem("soundState"))){
+localStorage.setItem("soundState", "");
+}
+
+		function loadSound(){
+if(localStorage.getItem("soundState") == "true"){
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/off.png"
+
+}else if(localStorage.getItem("soundState") == ""){
+document.getElementById('audiobg').muted =  localStorage.getItem("soundState");
+document.getElementById("test").src = "images/on.png"
+var audio = document.getElementById("audiobg");
+audio.play();
+
+}
+}
+
+function sound(){
+if(localStorage.getItem("soundState") == ""){
+mute();
+}else if(localStorage.getItem("soundState") == "true"){
+unmute();
+}
+
+}
+function mute(){
+localStorage.setItem("soundState", "true");
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/off.png"
+}
+function unmute(){
+localStorage.setItem("soundState", "");
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/on.png"
+var audio = document.getElementById("audiobg");
+audio.play();
+}
+		
+	
+		
+</script>
+
+	<style type="text/css">
+	body
+	{
+	background: url(images/cover.png) fixed no-repeat;
+	background-position: center;
+	background-size: cover;
+	}
+	#menu{
+	margin-top: 50px;
+	}
+	#menu img{
+	text-align:center;
+	margin: 0 auto;
+	}
+	</style>
+	</head>
+	
+<body>
+	<div data-role="page" data-theme="a" id="mainPage">
+		
+			
+			
+			
+		
+			
+			<div id="menu">	
+			
+			<a href="game.html"><img alt="" src="images/match.png"/></a>
+			<br><br>
+			<a href="game2.html"><img alt="" src="images/game2.png"/></a>
+			<br><br>
+			<a href="game3.html"><img alt="" src="images/me.png"/></a>
+			
+			</div>
+			
+			
+		
+		
+		<!--</div>-->
+
+	</div>
+	
+</body>
+</html>
